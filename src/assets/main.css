@@ -1,0 +1,315 @@
+@import './base.css';
+
+/*  customized styles  */
+
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    background-color: #222222;
+    z-index: 9;
+}
+
+.navigation-container a {
+    padding: 8px;
+    margin: 0 4px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    transition: all .3s;
+}
+
+.navigation-container a:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.full-screen-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.animated-background {
+    background: linear-gradient(315deg, rgb(66, 211, 146) 25%, rgb(100, 126, 255));
+    animation: gradient_anim 1s;
+}
+
+.not-found-title {
+    font-size: 96px;
+    font-weight: bold;
+    animation: pop_down_anim .7s linear;
+}
+
+.home-background h1 {
+    font-size: 96px;
+    font-weight: bold;
+    width: 50vw;
+    margin-top: 20vh;
+    text-align: center;
+    background: linear-gradient(315deg, rgb(66, 211, 146) 25%, rgb(100, 126, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: title_anim .5s;
+}
+
+.home-background h2 {
+    font-size: 32px;
+    width: 50vw;
+    text-align: center;
+    animation: title_anim .5s;
+}
+
+.home-background span:nth-child(1) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    height: 100vh;
+    background-color: #192020;
+    transform: skew(-15deg);
+    animation: background_anim .7s;
+    z-index: -1;
+}
+
+.home-background span:nth-child(2) {
+    position: fixed;
+    top: 0;
+    right: -10vw;
+    width: 70vw;
+    height: 100vh;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    background-color: #2c3e50;
+    transform: skew(-15deg) translateZ(-500px);
+    animation: background_anim .7s;
+    z-index: -1;
+}
+
+.home-background span:nth-child(3) {
+    position: fixed;
+    top: 0;
+    right: -20vw;
+    width: 70vw;
+    height: 100vh;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 1);
+    background-color: hsla(160, 100%, 37%, 1);
+    transform: skew(-15deg);
+    animation: background_anim .7s;
+    z-index: -1;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    opacity: 0;
+    animation: fade_anim .3s .7s forwards;
+}
+
+.auth-container button {
+    font-size: 32px;
+    font-weight: bold;
+    width: 256px;
+    padding: 28px;
+    margin: 12px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: all .3s;
+}
+
+.auth-container button:nth-child(1) {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.auth-container button:nth-child(1):hover {
+    background-color: white;
+    color: #2c3e50;
+}
+
+.auth-container button:nth-child(2) {
+    background-color: white;
+    color: #2c3e50;
+}
+
+.auth-container button:nth-child(2):hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.auth-container p {
+    font-size: 24px;
+}
+
+.auth-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    background-color: #2c3e50;
+    transform: scale(0);
+    animation: card_anim .5s .2s linear forwards;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.auth-card h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.auth-card a {
+    margin: 12px 0;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.auth-card a:hover {
+    color: aqua;
+}
+
+.auth-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.auth-input-container span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 66px;
+    height: 100%;
+    font-size: 32px;
+    color: rgba(0,0,0,0.5);
+}
+
+.auth-input {
+    width: 100%;
+    font-size: 20px;
+    padding: 16px 20px;
+    margin: 8px 0;
+    text-indent: 40px;
+    border: none;
+    border-radius: 99px;
+    outline: none;
+    transition: all .3s;
+}
+
+.auth-input:focus {
+    box-shadow: 0 0 16px rgb(0, 200, 255);
+}
+
+.auth-button {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px 20px;
+    margin-top: 24px;
+    border: none;
+    border-radius: 99px;
+    outline: none;
+    background-color: aqua;
+    transition: all .3s;
+}
+
+.auth-button:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+}
+
+
+/*  animations  */
+
+@keyframes title_anim {
+    from {
+        margin-top: 35vh;
+        opacity: 0
+    }
+}
+
+@keyframes background_anim {
+    from {
+        right: -50vw;
+        opacity: 0
+    }
+}
+
+@keyframes gradient_anim {
+    from {
+        opacity: 0
+    }
+}
+
+@keyframes scale_anim {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes fade_anim {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes pop_down_anim {
+    0% {
+        margin-top: -50vh
+    }
+    30% {
+        margin-top: 5vh
+    }
+    50% {
+        margin-top: -3vh
+    }
+    75% {
+        margin-top: 1vh
+    }
+    100% {
+        margin-top: 0
+    }
+}
+
+@keyframes card_anim {
+    0% { transform: scale(0); margin-top: -50vh }
+    25% { transform: scale(0.3); margin-top: -10vh }
+    50% { transform: scale(0.5); margin-top: 10vh }
+    75% { transform: scale(0.8); margin-top: -3vh }
+    100% { transform: scale(1) }
+}
